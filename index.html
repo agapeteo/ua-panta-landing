@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Google tag (gtag.js) — GA4 -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-8SDCCMNHDT"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            // Consent Mode v2 — deny storage until the visitor chooses
+            gtag("consent", "default", {
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied",
+                analytics_storage: "denied",
+            });
+            // Honor a stored choice immediately, before the banner loads
+            try {
+                if (localStorage.getItem("panta-consent") === "granted") {
+                    gtag("consent", "update", {
+                        ad_storage: "granted",
+                        ad_user_data: "granted",
+                        ad_personalization: "granted",
+                        analytics_storage: "granted",
+                    });
+                }
+            } catch (e) {}
+            gtag("js", new Date());
+            gtag("config", "G-8SDCCMNHDT");
+        </script>
+
+        <title>Panta — Маркетплейс для сучасних умів</title>
+        <meta
+            name="description"
+            content="Panta — це кураторський маркетплейс, що поєднує талановитих авторів і допитливі уми — електронні книги, аудіокниги, курси та інтерактивний досвід."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400..600&family=Onest:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+        <link rel="manifest" href="site.webmanifest" />
+    </head>
+    <body data-direction="editorial" data-motion="on">
+        <!-- atmosphere -->
+        <div class="atmosphere" aria-hidden="true">
+            <div class="bloom bloom--gold"></div>
+            <div class="bloom bloom--rose"></div>
+            <div class="bloom bloom--sage"></div>
+            <div class="bloom bloom--gold-2"></div>
+            <div class="bloom bloom--rose-2"></div>
+        </div>
+
+        <!-- ======================= NAV ======================= -->
+        <header class="nav" id="nav">
+            <div class="wrap nav__inner">
+                <a class="wordmark" href="#top"
+                    >Panta<span class="dot">.</span></a
+                >
+                <nav class="nav__links">
+                    <a class="nav-link" href="in-progress.html">Огляд</a>
+                    <a class="nav-link" href="in-progress.html">Для авторів</a>
+                    <a class="nav-link" href="in-progress.html"
+                        >Рекомендоване</a
+                    >
+                    <a class="btn btn--primary" href="#waitlist"
+                        >Долучитися до списку очікування</a
+                    >
+                </nav>
+            </div>
+        </header>
+        <!-- ======================= STRIP ======================= -->
+        <div class="strip" aria-hidden="true">
+            <div class="strip__row" id="strip">
+                <span><b>Усі</b> незалежні автори</span>
+                <span>·</span>
+                <span><b>електронні книги</b></span>
+                <span>·</span>
+                <span><b>аудіокниги</b></span>
+                <span>·</span>
+                <span><b>курси</b></span>
+                <span>·</span>
+                <span><b>інтерактивний досвід</b></span>
+                <span>·</span>
+                <span>справедливі роялті для авторів</span>
+                <span>·</span>
+            </div>
+        </div>
+
+        <main id="top">
+            <!-- ======================= HERO ======================= -->
+            <section class="hero">
+                <div class="wrap hero__grid">
+                    <div class="hero__copy">
+                        <div class="hero__eyebrow eyebrow reveal">
+                            <span class="rule"></span>
+                            Маркетплейс для сучасних умів
+                        </div>
+                        <h1 class="reveal" data-d="1">
+                            Де <em>блискуча робота</em> знаходить свій<br />допитливий
+                            ум<span class="dot">.</span>
+                        </h1>
+                        <p class="hero__lede reveal" data-d="2">
+                            Надихаємо авторів, окриляємо читачів. Ми долаємо
+                            прірву між талановитими авторами та допитливими
+                            умами — пропонуючи кураторський простір для обміну
+                            <em
+                                >електронними книгами, аудіокнигами, курсами та
+                                інтерактивним досвідом</em
+                            >.
+                        </p>
+                        <div class="hero__cta reveal" data-d="3">
+                            <a class="btn btn--primary" href="#waitlist"
+                                >Долучитися до списку очікування
+                                <span class="arrow">→</span></a
+                            >
+                            <a class="btn btn--ghost" href="in-progress.html"
+                                >Переглянути полиці</a
+                            >
+                        </div>
+                        <p class="hero__note reveal" data-d="4">
+                            Без шуму · лише те, що варто читати
+                        </p>
+                    </div>
+
+                    <div
+                        class="hero__visual reveal"
+                        data-d="2"
+                        aria-hidden="true"
+                    >
+                        <div class="cover c1">
+                            <span class="cover__tag">електронна книга</span>
+                        </div>
+                        <div class="cover c2">
+                            <span class="cover__tag">аудіокнига</span>
+                        </div>
+                        <div class="cover c3">
+                            <span class="cover__tag">курс</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================= CATEGORIES ======================= -->
+            <!-- --
+            <section class="sec" id="categories">
+                <div class="wrap">
+                    <div class="sec__head reveal">
+                        <span class="eyebrow"
+                            >The shelves<span class="dot"> ·</span> what you can
+                            trade</span
+                        >
+                        <h2 class="sec__title">
+                            Four ways to <em>think, learn,</em> and listen.
+                        </h2>
+                        <p class="sec__sub">
+                            Every format a modern mind reaches for — curated,
+                            never crowded.
+                        </p>
+                    </div>
+                    <div class="cats">
+                        <a
+                            class="cat reveal"
+                            data-d="1"
+                            href="in-progress.html"
+                        >
+                            <span class="cat__num">01</span>
+                            <div class="cat__thumb"></div>
+                            <h3 class="cat__name">E-books</h3>
+                            <p class="cat__desc">
+                                Long-form ideas and fiction from independent
+                                authors, DRM-free.
+                            </p>
+                            <span class="cat__go"
+                                >Explore <span class="arrow">→</span></span
+                            >
+                        </a>
+                        <a
+                            class="cat reveal"
+                            data-d="2"
+                            href="in-progress.html"
+                        >
+                            <span class="cat__num">02</span>
+                            <div class="cat__thumb"></div>
+                            <h3 class="cat__name">Audiobooks</h3>
+                            <p class="cat__desc">
+                                Voices worth your commute, narrated and produced
+                                with care.
+                            </p>
+                            <span class="cat__go"
+                                >Explore <span class="arrow">→</span></span
+                            >
+                        </a>
+                        <a
+                            class="cat reveal"
+                            data-d="3"
+                            href="in-progress.html"
+                        >
+                            <span class="cat__num">03</span>
+                            <div class="cat__thumb"></div>
+                            <h3 class="cat__name">Courses</h3>
+                            <p class="cat__desc">
+                                Self-paced craft and knowledge, taught by people
+                                who make things.
+                            </p>
+                            <span class="cat__go"
+                                >Explore <span class="arrow">→</span></span
+                            >
+                        </a>
+                        <a
+                            class="cat reveal"
+                            data-d="4"
+                            href="in-progress.html"
+                        >
+                            <span class="cat__num">04</span>
+                            <div class="cat__thumb"></div>
+                            <h3 class="cat__name">Interactive</h3>
+                            <p class="cat__desc">
+                                Living documents, playable essays, and
+                                experiences that respond.
+                            </p>
+                            <span class="cat__go"
+                                >Explore <span class="arrow">→</span></span
+                            >
+                        </a>
+                    </div>
+                </div>
+            </section>
+            -->
+
+            <!-- ======================= FEATURED SHELF ======================= -->
+            <!-- --
+            <section class="sec" id="shelf" style="padding-top: 0">
+                <div class="wrap">
+                    <div class="sec__head reveal">
+                        <span class="eyebrow"
+                            >On the shelves now<span class="dot"> ·</span>
+                            curated weekly</span
+                        >
+                        <h2 class="sec__title">
+                            Hand-picked, not <em>algorithm-fed.</em>
+                        </h2>
+                    </div>
+                    <div class="shelf">
+                        <div class="shelf__item reveal" data-d="1">
+                            <div class="shelf__cover">
+                                <span class="shelf__ph">cover art</span>
+                            </div>
+                            <div class="shelf__meta">
+                                <span class="k">E-book</span>
+                                <p class="t">Essays on the quiet life</p>
+                            </div>
+                        </div>
+                        <div class="shelf__item reveal" data-d="2">
+                            <div class="shelf__cover">
+                                <span class="shelf__ph">cover art</span>
+                            </div>
+                            <div class="shelf__meta">
+                                <span class="k">Audiobook</span>
+                                <p class="t">Notes from a slower year</p>
+                            </div>
+                        </div>
+                        <div class="shelf__item reveal" data-d="3">
+                            <div class="shelf__cover">
+                                <span class="shelf__ph">cover art</span>
+                            </div>
+                            <div class="shelf__meta">
+                                <span class="k">Course</span>
+                                <p class="t">The craft of attention</p>
+                            </div>
+                        </div>
+                        <div class="shelf__item reveal" data-d="4">
+                            <div class="shelf__cover">
+                                <span class="shelf__ph">cover art</span>
+                            </div>
+                            <div class="shelf__meta">
+                                <span class="k">Interactive</span>
+                                <p class="t">A field guide to ideas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            -->
+
+            <!-- ======================= READERS / CREATORS ======================= -->
+            <!-- --
+            <section class="sec" id="creators" style="padding-top: 0">
+                <div class="wrap">
+                    <div class="duo">
+                        <div class="panel panel--readers reveal" data-d="1">
+                            <span class="panel__eyebrow">For readers</span>
+                            <h3 class="panel__title">
+                                Find your <em>next</em> idea.
+                            </h3>
+                            <p class="panel__lead">
+                                A calm, curated catalogue with no dark patterns
+                                and no infinite scroll — just work chosen
+                                because it's good.
+                            </p>
+                            <ul class="panel__list">
+                                <li>One library across every format you buy</li>
+                                <li>Read, listen, and learn on any device</li>
+                                <li>
+                                    Support the people who made it, directly
+                                </li>
+                            </ul>
+                            <a class="btn btn--ghost" href="in-progress.html"
+                                >Start exploring</a
+                            >
+                        </div>
+                        <div class="panel panel--creators reveal" data-d="2">
+                            <span class="panel__eyebrow">For creators</span>
+                            <h3 class="panel__title">
+                                Publish on your <em>own</em> terms.
+                            </h3>
+                            <p class="panel__lead">
+                                Bring your e-book, audiobook, course, or
+                                interactive work to a marketplace built to put
+                                your craft — and your earnings — first.
+                            </p>
+                            <ul class="panel__list">
+                                <li>Keep up to 90% of every sale</li>
+                                <li>
+                                    Set your price, your bundles, your rules
+                                </li>
+                                <li>Reach readers who came to pay attention</li>
+                            </ul>
+                            <a class="btn btn--ghost" href="in-progress.html"
+                                >Sell your work</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            -->
+
+            <!-- ======================= WAITLIST ======================= -->
+            <section class="waitlist" id="waitlist">
+                <div class="wrap waitlist__card reveal">
+                    <span class="eyebrow"
+                        >Незабаром відкриття<span class="dot"> ·</span> тихий
+                        початок</span
+                    >
+                    <h2>
+                        Будьте серед перших <em>сучасних умів</em> усередині.
+                    </h2>
+                    <p>
+                        Долучайтеся до списку очікування, і ми збережемо для вас
+                        місце. Мить, щоб прибути, перш ніж почати.
+                    </p>
+                    <form class="form" id="waitlistForm" novalidate>
+                        <input
+                            type="hidden"
+                            name="access_key"
+                            value="75010886-2d32-4f87-a606-ab42708fe256"
+                        />
+                        <input
+                            type="hidden"
+                            name="subject"
+                            value="New Panta waitlist signup"
+                        />
+                        <input
+                            type="hidden"
+                            name="from_name"
+                            value="Panta Waitlist"
+                        />
+                        <input
+                            type="checkbox"
+                            name="botcheck"
+                            style="display: none"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                        />
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            aria-label="Електронна адреса"
+                            required
+                        />
+                        <button class="btn btn--primary" type="submit">
+                            Долучитися до списку
+                        </button>
+                    </form>
+                    <p class="form__note" id="formNote">
+                        Без спаму · один лист, коли двері відчиняться
+                    </p>
+                </div>
+            </section>
+
+            <!-- ======================= QUOTE MOMENT ======================= -->
+            <section class="quote">
+                <div class="wrap reveal">
+                    <span class="quote__mark">&ldquo;</span>
+                    <p class="quote__text">
+                        Ми не отримуємо мудрість; ми маємо відкрити її для себе
+                        самі.
+                    </p>
+                    <p class="quote__by">Марсель Пруст</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- ======================= FOOTER ======================= -->
+        <footer class="footer">
+            <div class="wrap">
+                <div class="footer__grid">
+                    <div class="footer__brand">
+                        <a class="wordmark" href="#top"
+                            >Panta<span class="dot">.</span></a
+                        >
+                        <p class="footer__tag">
+                            Кураторський маркетплейс, що поєднує талановитих
+                            авторів і допитливі уми.
+                        </p>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Огляд</h4>
+                        <ul>
+                            <li>
+                                <a href="in-progress.html">Електронні книги</a>
+                            </li>
+                            <li><a href="in-progress.html">Аудіокниги</a></li>
+                            <li><a href="in-progress.html">Курси</a></li>
+                            <li><a href="in-progress.html">Інтерактив</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Автори</h4>
+                        <ul>
+                            <li>
+                                <a href="in-progress.html">Почати продавати</a>
+                            </li>
+                            <li><a href="in-progress.html">Роялті</a></li>
+                            <li><a href="in-progress.html">Правила</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Panta</h4>
+                        <ul>
+                            <li><a href="in-progress.html">Про нас</a></li>
+                            <li><a href="#waitlist">Список очікування</a></li>
+                            <li><a href="in-progress.html">Журнал</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__base">
+                    <span class="mono"
+                        >© 2026 Panta · Маркетплейс для сучасних умів</span
+                    >
+                    <span class="mono">створено для тиші</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- behaviour -->
+        <script src="app.js"></script>
+    </body>
+</html>

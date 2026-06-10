@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8SDCCMNHDT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  // Consent Mode v2 — deny storage until the visitor chooses
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+  // Honor a stored choice immediately, before the banner loads
+  try {
+    if (localStorage.getItem('panta-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
+    }
+  } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-8SDCCMNHDT');
+</script>
+
+<title>Ще пишеться — Panta</title>
+<meta name="description" content="Цей куточок Panta ще пишеться. Долучайтеся до списку очікування, і ми сповістимо вас, щойно він відкриється." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400..600&family=Onest:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+</head>
+<body data-motion="on">
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="bloom bloom--gold"></div>
+    <div class="bloom bloom--rose"></div>
+    <div class="bloom bloom--sage"></div>
+    <div class="bloom bloom--gold-2"></div>
+    <div class="bloom bloom--rose-2"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="wordmark" href="index.html">Panta<span class="dot">.</span></a>
+      <nav class="nav__links">
+        <a class="nav-link" href="in-progress.html">Огляд</a>
+        <a class="nav-link" href="in-progress.html">Для авторів</a>
+        <a class="nav-link" href="in-progress.html">Рекомендоване</a>
+        <a class="btn btn--primary" href="index.html#waitlist">Долучитися до списку очікування</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="wrap stage__inner">
+      <div class="stage__eyebrow eyebrow">
+        <span class="rule"></span>
+        У роботі<span class="dot"> ·</span> ще пишеться
+      </div>
+      <h1>Ми ще пишемо<br /><em>цей розділ</em><span class="dot">.</span></h1>
+      <p class="stage__lede">
+        Ця частина маркетплейсу створюється з тією самою турботою, якої ми
+        прагнемо для всього на Panta. Вона ще не готова — але вже близько.
+      </p>
+
+      <div class="progress" aria-hidden="true">
+        <div class="progress__track"><div class="progress__fill"></div></div>
+        <div class="progress__labels">
+          <span>чернетка</span>
+          <span>незабаром відкриття</span>
+        </div>
+      </div>
+
+      <div class="stage__cta">
+        <a class="btn btn--primary" href="index.html#waitlist">Долучитися до списку очікування <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="index.html">Назад до Panta</a>
+      </div>
+      <p class="stage__note">Мить, щоб прибути, перш ніж почати</p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

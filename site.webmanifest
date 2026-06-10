@@ -1,0 +1,14 @@
+{
+  "name": "Panta — Marketplace for modern minds",
+  "short_name": "Panta",
+  "description": "A curated marketplace bridging brilliant authors and eager minds — e-books, audiobooks, courses, and interactive experiences.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#faf7ef",
+  "theme_color": "#2e4034",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

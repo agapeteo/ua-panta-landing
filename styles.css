@@ -249,10 +249,71 @@ h1, h2, h3 { margin: 0; font-weight: 500; line-height: 1.08; letter-spacing: -0.
 }
 .nav__links a:not(.btn):hover { color: var(--ink); }
 .nav__links a:not(.btn):hover::after { width: 100%; }
-.nav__menu-btn { display: none; }
+/* hamburger toggle — hidden on desktop */
+.nav__menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px; height: 42px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.nav__menu-btn span {
+  display: block;
+  width: 18px; height: 2px;
+  margin: 0 auto;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav--menu-open .nav__menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav--menu-open .nav__menu-btn span:nth-child(2) { opacity: 0; }
+.nav--menu-open .nav__menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* mobile dropdown panel — collapsed by default */
+.nav__menu { display: none; }
+.nav__menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-block: 10px 22px;
+}
+.nav__menu-link {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 13px 2px;
+  border-bottom: 1px solid var(--line-soft);
+  transition: color .2s;
+}
+.nav__menu-link:hover { color: var(--ink); }
+.nav__menu-cta { margin-top: 14px; justify-content: center; }
 
 @media (max-width: 760px) {
   .nav__links .nav-link { display: none; }
+  .nav__links .btn--primary { display: none; }
+  .nav__menu-btn { display: flex; }
+  .nav__menu {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    background: rgba(250, 247, 239, 0.98);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: max-height .32s cubic-bezier(.2,.7,.2,1), border-color .32s;
+  }
+  .nav--menu-open .nav__menu {
+    max-height: 360px;
+    border-bottom-color: var(--line-soft);
+  }
 }
 
 /* ============================================================
@@ -657,21 +718,23 @@ body[data-motion="off"] .strip__row { animation: none; }
   grid-template-columns: 1.4fr repeat(3, 1fr);
   gap: 40px 24px;
   margin-bottom: 44px;
+  text-align: center;
+  justify-items: center;
 }
 .footer__brand .wordmark { font-size: 30px; }
-.footer__tag { margin-top: 14px; color: var(--muted); font-size: 14.5px; max-width: 30ch; line-height: 1.55; }
+.footer__tag { margin-top: 14px; margin-inline: auto; color: var(--muted); font-size: 14.5px; max-width: 30ch; line-height: 1.55; }
 .footer__col h4 {
   font-family: var(--sans);
   font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink); margin: 0 0 16px;
 }
-.footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; justify-items: center; }
 .footer__col a { color: var(--muted); text-decoration: none; font-size: 14.5px; transition: color .2s; }
 .footer__col a:hover { color: var(--accent-ink); }
 .footer__base {
-  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  display: flex; justify-content: center; align-items: center; gap: 16px;
   padding-top: 26px; border-top: 1px solid var(--line-soft);
-  font-size: 13px; color: var(--faint);
+  font-size: 13px; color: var(--faint); text-align: center;
 }
 .footer__base .mono { color: var(--faint); }
 
@@ -835,7 +898,7 @@ body[data-motion="off"] .progress__fill,
   .cats { grid-template-columns: 1fr; }
   .shelf { grid-template-columns: 1fr 1fr; }
   .footer__grid { grid-template-columns: 1fr; gap: 30px; }
-  .footer__base { flex-direction: column; align-items: flex-start; }
+  .footer__base { flex-direction: column; align-items: center; }
   .form { flex-direction: column; border-radius: 18px; padding: 10px; }
   .form input { padding: 10px 12px; text-align: center; }
   .form .btn--primary { width: 100%; justify-content: center; }

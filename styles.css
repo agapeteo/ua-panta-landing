@@ -414,12 +414,14 @@ h1, h2, h3 { margin: 0; font-weight: 500; line-height: 1.08; letter-spacing: -0.
 .strip__row {
   display: flex;
   align-items: center;
-  gap: 56px;
   white-space: nowrap;
   width: max-content;
   animation: marquee 36s linear infinite;
 }
 .strip__row span {
+  /* spacing lives on the items (not flex gap) so the duplicated
+     content is exactly half the row width and -50% loops seamlessly */
+  margin-right: 56px;
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.14em;

@@ -40,7 +40,33 @@
 
   /* ---- duplicate marquee content for seamless loop ---- */
   var strip = document.getElementById("strip");
-  if (strip) strip.innerHTML += strip.innerHTML;
+  if (strip) {
+    var stripHalf = strip.children.length;
+    strip.innerHTML += strip.innerHTML;
+    /* Snap each copy's width to whole device pixels: with a fractional
+       width the two copies rasterize with different subpixel
+       antialiasing, so the text shimmers every time the loop wraps. */
+    var snapStrip = function () {
+      var lastA = strip.children[stripHalf - 1];
+      var lastB = strip.children[stripHalf * 2 - 1];
+      lastA.style.marginRight = lastB.style.marginRight = "";
+      var dpr = window.devicePixelRatio || 1;
+      var left = strip.getBoundingClientRect().left;
+      var period =
+        strip.children[stripHalf].getBoundingClientRect().left - left;
+      var pad = Math.ceil(period * dpr) / dpr - period;
+      if (pad > 0.001) {
+        var margin =
+          parseFloat(getComputedStyle(lastA).marginRight) + pad + "px";
+        lastA.style.marginRight = lastB.style.marginRight = margin;
+      }
+    };
+    snapStrip();
+    /* widths change when the webfont swaps in — re-snap */
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(snapStrip);
+    }
+  }
 
   /* ---- scroll reveal ---- */
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
